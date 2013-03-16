@@ -1,0 +1,26 @@
+doctype 5
+html
+	head
+		title= title
+		include includes/styles
+		include includes/scripts
+		link(rel='stylesheet', href='/css/viewer.css')
+	body
+		#viewer
+			.sidebar
+				.header
+					a(href='/')
+						img(src='img/logo.png').logo
+				.viewer-search
+					i.icon-angle-left.icon-3x
+					input(type='text', placeholder='machine learning')
+					i.icon-angle-right.icon-3x
+				.topbar
+					a(href='#') Details <hr>
+					a(href='#').discussion-link.active Discussion <hr>
+					a(href='#').reviews-link Reviews <hr>
+				.clearfix
+				include reviews
+				include discussion
+			.window
+				iframe(src='http://mozilla.github.com/pdf.js/web/viewer.html')
