@@ -86,34 +86,36 @@ $(document).ready(function(){
 		$(this).parent().parent().siblings('.abstract').slideFadeToggle();
 	});
 
+	// only show details
+	$('.review-list').hide();
+	$('.discussion').hide();
+
 	//profile publications/reviews tab
-	$('.publications-link').click(function(){
+	$('.details-link').click(function(){
 		$('.review-list').hide();
 		$('.discussion').hide();
-		$('.item-list').fadeIn(250);
-		$('.publications-link').addClass('active');
+		$('.details').fadeIn(250);
+		$('.details-link').addClass('active');
 		$('.reviews-link').removeClass('active');
 		$('.full-text-link').removeClass('active');
 		$('.discussion-link').removeClass('active');
 	});
 
 	$('.reviews-link').click(function(){
-		$('.item-list').hide();
+		$('.details').hide();
 		$('.review-list').fadeIn(250);
 		$('.discussion').hide();
-		$('.publications-link').removeClass('active');
+		$('.details-link').removeClass('active');
 		$('.reviews-link').addClass('active');
-		$('.full-text-link').removeClass('active');
 		$('.discussion-link').removeClass('active');
 	});
 	
 	$('.discussion-link').click(function(){
-		$('.item-list').hide();
+		$('.details').hide();
 		$('.review-list').hide();
 		$('.discussion').fadeIn(250);
-		$('.publications-link').removeClass('active');
+		$('.details-link').removeClass('active');
 		$('.reviews-link').removeClass('active');
-		$('.full-text-link').removeClass('active');
 		$('.discussion-link').addClass('active');
 	});
 });

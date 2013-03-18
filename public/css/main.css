@@ -58,7 +58,7 @@ textarea {
         ============================*/
     
 a {
-    color: #87939c;
+    color: #30507c;
     text-decoration: none;
 }
 
@@ -67,7 +67,7 @@ a:hover {
 }
 
 a:visited {
-    color: #667d8d;
+    color: #30507c;
 }
     
 p {
@@ -144,6 +144,20 @@ input:focus {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+}
+
+.count-badge {
+	font-size: 0.7em;
+	font-weight: 600;
+	color: white;
+	background: #7d8b9b;
+	display: inline-block;
+	padding: 6px;
+	margin-left: 5px;
+	
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
 }
 
 /* =============================
@@ -359,7 +373,7 @@ header .menu ul.nav li a:hover {
     text-align: center;
     margin-right: 20px;
     padding: 5px 20px;
-    min-width: 70px;
+    min-width: 100px;
     text-decoration: none;
     display: block;
     float: left;
@@ -458,10 +472,14 @@ ol.item-list .abstract, .article-summary .abstract, .review-list .abstract {
 		position: relative;
 }
 
+/* article details */
+.details {
+	
+}
+
 /* review list */
 .review-list {
     padding: 20px 0;
-    display: none;
 }
 
 .review-list li {

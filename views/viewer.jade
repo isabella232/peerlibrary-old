@@ -11,16 +11,36 @@ html
 				.header
 					a(href='/')
 						img(src='img/logo.png').logo
-				.viewer-search
-					i.icon-angle-left.icon-3x
-					input(type='text', placeholder='machine learning')
-					i.icon-angle-right.icon-3x
-				.topbar
-					a(href='#') Details <hr>
-					a(href='#').discussion-link.active Discussion <hr>
-					a(href='#').reviews-link Reviews <hr>
+				.menubar
+					ul.nav
+						li
+							a(href='#').details-link.active Details
+						li
+							a(href='#').discussion-link Discussion
+						li
+							a(href='#').reviews-link Reviews
 				.clearfix
-				include reviews
-				include discussion
+				.wrap
+					include details
+					include reviews
+					include discussion
 			.window
 				iframe(src='http://mozilla.github.com/pdf.js/web/viewer.html')
+
+	block misc
+		script(type='text/javascript')
+			$(document).ready(function(){
+				var docked = false;
+				$('.sidebar').scroll(function(){
+					if ($(this).scrollTop() > 55) {
+						$('.menubar').addClass('menubar-fixed');
+					} else {
+						$('.menubar').removeClass('menubar-fixed');
+					}
+				});
+				//$('.sidebar').scroll(function () {
+				//	if ($('.sidebar').scrollTop() > 0) {
+				//		$('.menubar').css('top', $('.sidebar').scrollTop());
+				//	}
+				//});
+			});

@@ -3,6 +3,7 @@ html,body{height:100%;}
 	width: 100%;
 	height: 100%;
 	overflow-x: hidden;
+	position: relative;
 }
 #viewer .window {
 	height: 100%;
@@ -14,31 +15,147 @@ html,body{height:100%;}
 	width: 100%;
 }
 #viewer .sidebar {
-	width: 460px;
-	max-height: 100%;
+	position: relative;
+	width: 480px;
+	height: 100%;
 	float: right;
+	border-left: 1px solid #b8c1c7;
+	position: relative;
 	overflow-x: hidden;
 	overflow-y: scroll;
 }
-#viewer .sidebar > div, #viewer .sidebar > ol {
+
+#viewer .sidebar > ol {
 	margin: 20px;
 }
+
 #viewer .sidebar .header {
+	position: relative;
+	height: 60px;
+	padding: 0 20px;
 }
+
 #viewer .sidebar .logo {
+	position: relative;
+	top: 20px;
 	height: 25px;
 }
-#viewer .sidebar .viewer-search {
-    text-align: center;
+
+#viewer .sidebar .menubar {
+	position: absolute;
+	top: 60px;
+	height: 50px;
+	width: 100%;
+	background: white;
+	border-color: #dee7e9;
+	border-width: 1px 0;
+	border-style: solid;
 }
-#viewer .sidebar .viewer-search input {
-    border-top: 0;
-    border-right: 0;
-    border-left: 0;
-    border-bottom: 1px solid #b8c1c7;
-    background: none;
+
+.menubar-fixed {
+	position: fixed!important;
+	top: 0!important;
+	z-index: 99;
+}
+
+#viewer .sidebar .menubar ul.nav {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+
+#viewer .sidebar .menubar ul.nav li {
+	width: 159px;
+	height: 100%;
+	display: inline-block;
+	text-align: center;
+	vertical-align: center;
+	border-right: 1px solid #dee7e9;
+}
+
+#viewer .sidebar .menubar ul.nav li:last-child {
+	border-right: none;
+}
+
+#viewer .sidebar .menubar ul.nav li a {
+	height: 33px;
+	width: 100%;
+	padding-top: 17px;
+	text-decoration: none;
+	display: inline-block;
+	
+	-webkit-transition: 0.2s;
+	-moz-transition: 0.2s;
+	transition: 0.2s;
+}
+
+#viewer .sidebar .menubar ul.nav li a:hover {
+  color: #6f7477;
+  background: #eff5f7;
+}
+
+#viewer .sidebar .wrap {
+	padding: 50px 20px;
+}
+
+/* btn styles */
+.btn {
+	padding: 5px 10px;
+	border: 1px solid #7f96b0;
+	margin-right: 10px;
+	
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	
+	-webkit-transition: 0.2s;
+	-moz-transition: 0.2s;
+	transition: 0.2s;
+}
+
+.btn:hover {
+	text-decoration: none;
+	background: #eff5f7;
+	border-color: #2c436d;
+}
+
+.btn-wrap {
+	display: block;
+	margin-bottom: 20px;
+}
+/* details */
+.title-wrap {
+	display: block;
+	margin: 30px 0;
+}
+
+.publication-details {
+	display: block;
+	padding-top: 10px;
+}
+
+.publication-details p {
+	line-height: 2em;
+}
+
+.citations-list, .bibliography {
+	padding-top: 20px;
+}
+
+
+.citations-list h2, .bibliography h2 {
+	margin: 0;
+	float: left;
+	display: block;
 	font-weight: 300;
-	font-size: 24px;
-	width: 300px;
-	margin: 0 20px;
+}
+
+ol.pub-list {
+	list-style: none;
+	padding-left: 0;
+}
+
+ol.pub-list li {
+	padding: 10px 0;
 }
