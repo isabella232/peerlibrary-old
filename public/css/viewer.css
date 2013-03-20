@@ -46,7 +46,7 @@ html,body{height:100%;}
 	top: 60px;
 	height: 50px;
 	width: 100%;
-	background: white;
+	background: #dee7e9;
 	border-color: #dee7e9;
 	border-width: 1px 0;
 	border-style: solid;
@@ -56,6 +56,7 @@ html,body{height:100%;}
 	position: fixed!important;
 	top: 0!important;
 	z-index: 99;
+	width: 100%;
 }
 
 #viewer .sidebar .menubar ul.nav {
@@ -66,7 +67,8 @@ html,body{height:100%;}
 }
 
 #viewer .sidebar .menubar ul.nav li {
-	width: 159px;
+	background: white;
+	width: 154px;
 	height: 100%;
 	display: inline-block;
 	text-align: center;

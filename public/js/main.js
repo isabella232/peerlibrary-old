@@ -92,6 +92,9 @@ $(document).ready(function(){
 
 	//profile publications/reviews tab
 	$('.details-link').click(function(){
+		$('.sidebar').animate({
+			scrollTop: 57
+		}, 100);
 		$('.review-list').hide();
 		$('.discussion').hide();
 		$('.details').fadeIn(250);
@@ -102,6 +105,9 @@ $(document).ready(function(){
 	});
 
 	$('.reviews-link').click(function(){
+		$('.sidebar').animate({
+			scrollTop: 57
+		}, 100);
 		$('.details').hide();
 		$('.review-list').fadeIn(250);
 		$('.discussion').hide();
@@ -111,6 +117,9 @@ $(document).ready(function(){
 	});
 	
 	$('.discussion-link').click(function(){
+		$('.sidebar').animate({
+			scrollTop: 57
+		}, 100);
 		$('.details').hide();
 		$('.review-list').hide();
 		$('.discussion').fadeIn(250);
