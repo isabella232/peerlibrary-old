@@ -17,12 +17,9 @@ html
 							a(href='#').details-link.active Details
 						li
 							a(href='#').discussion-link Discussion [50]
-						li
-							a(href='#').reviews-link Reviews [33]
 				.clearfix
 				.wrap
 					include details
-					include reviews
 					include discussion
 			.window
 				iframe(src='http://mozilla.github.com/pdf.js/web/viewer.html')
@@ -31,11 +28,8 @@ html
 		script(type='text/javascript')
 			$(document).ready(function(){
 				var docked = false;
-				$('.sidebar').scroll(function(){
-					if ($(this).scrollTop() > 55) {
-						$('.menubar').addClass('menubar-fixed');
-					} else {
-						$('.menubar').removeClass('menubar-fixed');
-					}
+				
+				$('.journal-link').click(function(){
+					$('.pub-info').slideToggle('fast');
 				});
 			});

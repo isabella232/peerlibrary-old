@@ -96,8 +96,8 @@ input { font-family: 'Source Sans Pro', sans-serif; }
 
 ::-webkit-scrollbar-button:start:decrement,
 ::-webkit-scrollbar-button:end:increment {
-    display: block;
-    height: 10px;
+    display: none;
+    height: 0;
 }
 
 ::-webkit-scrollbar-button:vertical:increment {
@@ -193,14 +193,14 @@ input:focus {
 
 /* =============================
         ghp
-    =============================*/
+   =============================*/
 
 body#home {
     min-height: 600px;
     height: auto;
     position: relative;
     
-  background: url('../img/graph_bg.jpg') no-repeat center center; 
+  background: url('/img/graph_bg.jpg') no-repeat center center; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -211,7 +211,7 @@ body#home {
 
 /* ===============================
         Register / Sign up
-        ============================*/
+   ============================*/
 
 .auth-wrapper {
     width: 100%;
