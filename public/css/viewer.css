@@ -163,3 +163,63 @@ ol.pub-list {
 ol.pub-list li {
 	padding: 10px 0;
 }
+
+/* discussion */
+.discussion h4 {
+	margin: 30px 0;
+}
+
+.discussion ol.thread-list {
+	padding: 0;
+	list-style: none;
+}
+
+.discussion ol.thread-list li.thread-item span.paragraph-ref {
+	background: #87939c;
+	margin-right: 6px;
+	color: white;
+	padding: 2px 4px;
+
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.discussion ol.thread-list li {
+	cursor: pointer;
+	border-color: transparent;
+	border-style: solid;
+	border-width: 1px 0;
+	padding: 10px 0;
+
+	-webkit-transition: 0.2s;
+	-moz-transition: 0.2s;
+	-ms-transition: 0.2s;
+	-o-transition: 0.2s;
+	transition: 0.2s;
+}
+
+.discussion ol.thread-list li:hover {
+	border-top: 1px solid #e3e3e3;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.discussion ol.thread-list li.thread-item p{
+	width: 400px;
+	line-height: 22px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	float: left;
+	margin: 5px 0;
+}
+
+.discussion ol.thread-list li.thread-item i {
+	float: right;
+	margin-top: -6px;
+	visibility: hidden;
+}
+
+.discussion ol.thread-list li.thread-item:hover i {
+	visibility: visible;
+}
