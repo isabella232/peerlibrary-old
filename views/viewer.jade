@@ -20,7 +20,7 @@ html
 				.clearfix
 				.wrap
 					include details
-					include discussion
+					include threads
 			.window
 				iframe(src='http://mozilla.github.com/pdf.js/web/viewer.html')
 
@@ -32,4 +32,17 @@ html
 				$('.journal-link').click(function(){
 					$('.pub-info').slideToggle('fast');
 				});
+
+				// mock thread
+				$('.thread-item').click(function(event){
+					event.preventDefault();
+					$('.threads-wrap').hide();
+					$('.single-thread').fadeIn();
+				});
+
+				$('.all-discussions').click(function(event){
+					event.preventDefault();
+					$('.single-thread').hide();
+					$('.threads-wrap').fadeIn();
+				})
 			});

@@ -91,7 +91,8 @@ $(document).ready(function(){
 	$('.discussion').hide();
 
 	//profile publications/reviews tab
-	$('.details-link').click(function(){
+	$('.details-link').click(function(event){
+		event.preventDefault();
 		$('.review-list').hide();
 		$('.discussion').hide();
 		$('.details').fadeIn(250);
@@ -101,7 +102,7 @@ $(document).ready(function(){
 		$('.discussion-link').removeClass('active');
 	});
 
-	$('.reviews-link').click(function(){
+	$('.reviews-link').click(function(event){
 		$('.details').hide();
 		$('.review-list').fadeIn(250);
 		$('.discussion').hide();
@@ -110,7 +111,8 @@ $(document).ready(function(){
 		$('.discussion-link').removeClass('active');
 	});
 	
-	$('.discussion-link').click(function(){
+	$('.discussion-link').click(function(event){
+		event.preventDefault();
 		$('.details').hide();
 		$('.review-list').hide();
 		$('.discussion').fadeIn(250);

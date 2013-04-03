@@ -174,7 +174,7 @@ ol.pub-list li {
 	list-style: none;
 }
 
-.discussion ol.thread-list li.thread-item span.paragraph-ref {
+span.paragraph-ref {
 	background: #87939c;
 	margin-right: 6px;
 	color: white;
@@ -222,4 +222,9 @@ ol.pub-list li {
 
 .discussion ol.thread-list li.thread-item:hover i {
 	visibility: visible;
+}
+
+.single-thread {
+	display:none;
+	padding: 30px 0;
 }
