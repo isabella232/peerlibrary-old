@@ -228,3 +228,27 @@ span.paragraph-ref {
 	display:none;
 	padding: 30px 0;
 }
+
+.summary-wrap .edit-actions {
+	float: right;
+}
+
+.summary-wrap .edit-actions a {
+	text-decoration:none;
+	margin-left: 20px;
+}
+
+.paragraph-summary {
+	line-height: 24px;
+	outline: none;
+
+	-webkit-transition: 0.2s;
+	-moz-transition: 0.2s;
+	-ms-transition: 0.2s;
+	-o-transition: 0.2s;
+	transition: 0.2s;
+}
+
+.paragraph-summary:hover, .paragraph-summary:focus, .paragraph-summary.active {
+	background: #eff5f7;
+}

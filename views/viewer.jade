@@ -26,7 +26,46 @@ html
 
 	block misc
 		script(type='text/javascript')
+			//select end of contenteditable true entity
+			function setEndOfContenteditable(contentEditableElement)
+			{
+				var range,selection;
+				if(document.createRange)//Firefox, Chrome, Opera, Safari, IE 9+
+				{
+					range = document.createRange();//Create a range (a range is a like the selection but invisible)
+					range.selectNodeContents(contentEditableElement);//Select the entire contents of the element with the range
+					range.collapse(false);//collapse the range to the end point. false means collapse to end rather than the start
+					selection = window.getSelection();//get the selection object (allows you to change selection)
+					selection.removeAllRanges();//remove any selections already made
+					selection.addRange(range);//make the range you have just created the visible selection
+				}
+				else if(document.selection)//IE 8 and lower
+				{
+					range = document.body.createTextRange();//Create a range (a range is a like the selection but invisible)
+					range.moveToElementText(contentEditableElement);//Select the entire contents of the element with the range
+					range.collapse(false);//collapse the range to the end point. false means collapse to end rather than the start
+					range.select();//Select the range (make it the visible selection
+				}
+			}
 			$(document).ready(function(){
+
+				function placeCaretAtEnd(el) {
+					el.focus();
+					if (typeof window.getSelection != "undefined"
+						&& typeof document.createRange != "undefined") {
+						var range = document.createRange();
+						range.selectNodeContents(el);
+						range.collapse(false);
+						var sel = window.getSelection();
+						sel.removeAllRanges();
+						sel.addRange(range);
+					} else if (typeof document.body.createTextRange != "undefined") {
+						var textRange = document.body.createTextRange();
+						textRange.moveToElementText(el);
+						textRange.collapse(false);
+						textRange.select();
+					}
+				}
 				var docked = false;
 				
 				$('.journal-link').click(function(){
@@ -45,4 +84,23 @@ html
 					$('.single-thread').hide();
 					$('.threads-wrap').fadeIn();
 				})
+
+				var temp = '';
+
+				$('.edit-link').click(function(event){
+					event.preventDefault();
+					temp = $('.paragraph-summary').text();
+					placeCaretAtEnd(document.getElementById('summary'));
+					$('.edit-actions').html('<a href="#" class="cancel-link"><i class="icon-remove-sign"></i> Cancel</a><a href="#" class="save-link"><i class="icon-ok-sign"></i> Save Changes</a>');
+					$('.paragraph-summary').addClass('active');
+
+					$('.cancel-link').click(function(){
+						$('.paragraph-summary').text(temp);
+						$('.paragraph-summary').removeClass('active');
+						$('.paragraph-summary').blur();
+						$('.edit-actions').html('<a href="#" class="edit-link"><i class="icon-edit"></i> edit</a>');
+					});
+				});
+
+				
 			});
