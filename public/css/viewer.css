@@ -229,13 +229,21 @@ span.paragraph-ref {
 	padding: 30px 0;
 }
 
-.summary-wrap .edit-actions {
+.summary-wrap {
+	margin-bottom: 20px;
+}
+
+.summary-wrap .edit-options, .summary-wrap .save-options {
 	float: right;
 }
 
-.summary-wrap .edit-actions a {
+.summary-wrap .edit-options a, .summary-wrap .save-options a {
 	text-decoration:none;
 	margin-left: 20px;
+}
+
+.summary-wrap .save-options {
+	display: none;
 }
 
 .paragraph-summary {
@@ -251,4 +259,63 @@ span.paragraph-ref {
 
 .paragraph-summary:hover, .paragraph-summary:focus, .paragraph-summary.active {
 	background: #eff5f7;
+}
+
+.thread-wrap .compose-comment {
+	background: #eff5f7;
+	padding: 20px;
+	border: 1px solid #90aeb9;
+}
+
+.thread-wrap .compose-comment textarea.comment-input {
+	width: 370px;
+	padding: 10px;
+	resize: none;
+	outline: none;
+
+	border: 1px solid #90aeb9;
+}
+
+.thread-wrap .compose-comment button.comment-submit {
+	margin-top: 10px;
+	float: right;
+}
+
+.thread-wrap .all-comments {
+	padding-top: 20px;
+}
+
+.thread-wrap .all-comments ol.comments-list {
+	padding: 0;
+	list-style: none;
+	position: relative;
+}
+
+.thread-wrap .all-comments ol.comments-list li.single-comment {
+	width: 100%;
+	display: block;
+	float: left;
+	padding: 20px 0;
+}
+
+.thread-wrap .all-comments ol.comments-list .profile-picture {
+	width: 40px;
+	height: 40px;
+	display: block;
+	float: left;
+}
+
+.thread-wrap .all-comments ol.comments-list .comment-content {
+	margin-left: 10px;
+	width: 375px;
+	display: block;
+	float: right;
+}
+
+.thread-wrap .all-comments ol.comments-list .comment-content span {
+	display: block;
+}
+
+.thread-wrap .all-comments ol.comments-list .comment-content span.time-stamp {
+	color: #88919b;
 }

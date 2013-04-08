@@ -47,6 +47,18 @@ html
 					range.select();//Select the range (make it the visible selection
 				}
 			}
+
+			$(function(){
+				// WebKit contentEditable focus bug workaround:
+				if(/AppleWebKit\/([\d.]+)/.exec(navigator.userAgent)) {
+				var editableFix = $('<input style="width:1px;height:1px;border:none;margin:0;padding:0;" tabIndex="-1">').appendTo('.paragraph-summary');
+					$('[contenteditable]').blur(function () {
+						editableFix[0].setSelectionRange(0, 0);
+						editableFix.blur();
+					});
+				}
+			});
+
 			$(document).ready(function(){
 
 				function placeCaretAtEnd(el) {
@@ -66,7 +78,6 @@ html
 						textRange.select();
 					}
 				}
-				var docked = false;
 				
 				$('.journal-link').click(function(){
 					$('.pub-info').slideToggle('fast');
@@ -91,16 +102,37 @@ html
 					event.preventDefault();
 					temp = $('.paragraph-summary').text();
 					placeCaretAtEnd(document.getElementById('summary'));
-					$('.edit-actions').html('<a href="#" class="cancel-link"><i class="icon-remove-sign"></i> Cancel</a><a href="#" class="save-link"><i class="icon-ok-sign"></i> Save Changes</a>');
 					$('.paragraph-summary').addClass('active');
-
-					$('.cancel-link').click(function(){
-						$('.paragraph-summary').text(temp);
-						$('.paragraph-summary').removeClass('active');
-						$('.paragraph-summary').blur();
-						$('.edit-actions').html('<a href="#" class="edit-link"><i class="icon-edit"></i> edit</a>');
-					});
+					$('.edit-options').hide();
+					$('.save-options').fadeIn(200);
 				});
 
-				
+				$('.cancel-link').click(function(event){
+					event.preventDefault();
+					$('.paragraph-summary').html(temp);
+					$('.paragraph-summary').removeClass('active');
+					$('div[contentEditable="true"]').blur();
+					$('.save-options').hide();
+					$('.edit-options').fadeIn(200);
+				});
+
+				$('.save-link').click(function(event){
+					event.preventDefault();
+					$('.paragraph-summary').removeClass('active');
+					$('div[contentEditable="true"]').blur();
+					$('.save-options').hide();
+					$('.edit-options').fadeIn(200);
+				});
+
+				$('.paragraph-summary').focus(function(){
+					$(this).addClass('active');
+					$('.edit-options').hide();
+					$('.save-options').fadeIn(200);
+				});
+
+				$('.paragraph-summary').blur(function(){
+					$(this).removeClass('active');
+				});
+
+				$('.comment-input').css('overflow', 'hidden').autogrow()
 			});
